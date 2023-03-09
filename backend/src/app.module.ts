@@ -8,10 +8,8 @@ import { RolesModule } from './roles/roles.module';
 import {Role} from "./roles/roles.model";
 import {UserRoles} from "./roles/user-roles.model";
 import { AuthModule } from './auth/auth.module';
-import {ServeStaticModule} from "@nestjs/serve-static";
 import { TopicsModule } from './topics/topics.module';
 import { PostsModule } from './posts/posts.module';
-import * as path from 'path'
 import {Topics} from "./topics/topics.model";
 import {Posts} from "./posts/posts.model";
 
@@ -22,9 +20,6 @@ import {Posts} from "./posts/posts.model";
     imports: [
         ConfigModule.forRoot({
             envFilePath: `.${process.env.NODE_ENV}.env`
-        }),
-        ServeStaticModule.forRoot({
-           rootPath: path.resolve(__dirname, 'static')
         }),
             SequelizeModule.forRoot({
             dialect: 'postgres',
