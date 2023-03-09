@@ -23,14 +23,14 @@ export class TopicsController {
 
     @ApiOperation({summary: 'Get all topics'})
     @ApiResponse({status: 200, type: Topics})
-    @Get('/')
+    @Get('')
     getAll(){
         return this.topicsService.getAllTopics()
     }
 
     @ApiOperation({summary: 'Get topic by id'})
     @ApiResponse({status: 200, type: Topics})
-    @Get('/')
+    @Get('/:id')
     getTopicById(@Param('id') id: number){
         return this.topicsService.getTopicById(id)
     }
