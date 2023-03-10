@@ -7,7 +7,9 @@ import {CreatePostsDto} from "./dto/create-posts.dto";
 export class PostsService {
     constructor(@InjectModel(Posts) private postRepository: typeof Posts) {}
 
-    async createPost(dto: CreatePostsDto){
+    async createPost(dto: CreatePostsDto, file){
+        const imageName = file ? file.filename : '';
+        dto.image = imageName;
         const post = await this.postRepository.create(dto)
         return post
     }

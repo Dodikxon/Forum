@@ -38,10 +38,16 @@ export class AuthService {
     }
 
     private async generateToken(user: User){
-        const payload = {email: user.email, id: user.id, roles: user.roles}
+        const payload = {id: user.id, email: user.email, username: user.username, roles: user.roles}
         return {
             token: this.jwtService.sign(payload)
         }
+    }
+
+    async decodeToken(token: string) {
+        return {
+            token: this.jwtService.decode(token),
+        };
     }
 
     private async validateUser(userDto: CreateUserDto){

@@ -23,9 +23,18 @@ export class UsersService {
             const UserRoleDescription = "Default user"
             await this.roleService.createRole({value: UserRole, description: UserRoleDescription})
         }
-        await user.$set('roles', [role.id])
-        user.roles = [role]
-        return user;
+        if(user.id == 1){
+            const AdminRole = "Admin"
+            const AdminRoleDescription = "Administration"
+            await this.roleService.createRole({value: AdminRole, description: AdminRoleDescription})
+            await user.$set('roles', [2])
+            user.roles = [role]
+            return user;
+        }else{
+            await user.$set('roles', [role.id])
+            user.roles = [role]
+            return user;
+        }
     }
 
     async getAllUsers(){

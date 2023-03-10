@@ -12,5 +12,5 @@ export class CreatePostsDto{
     readonly description: string;
     @ApiProperty({example: 'image.png', description: 'Image post'})
     @IsString({message: isString})
-    readonly image: string;
+    image: string;
 }
