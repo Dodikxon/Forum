@@ -5,8 +5,8 @@ import Subnavbar from "./Subnavbar/Subnavbar";
 const Navbar = () => {
     return (
         <nav className='header-in-navbar'>
-            <Button buttonStyle='red' href='/Login' value='Log In'/>
             <Button buttonStyle='black' value='Get App'/>
+            <Button buttonStyle='red' value='Log In'/>
             <Subnavbar/>
         </nav>
     );
