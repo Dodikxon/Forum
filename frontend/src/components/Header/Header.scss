@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
   background: #fff;
+  border-bottom: 1px solid #000000;
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
   &-in{
     display: flex;
     justify-content: space-between;
